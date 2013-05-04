@@ -1,0 +1,141 @@
+Started GET "/" for 127.0.0.1 at 2013-05-03 20:39:13 +0530
+
+PG::Error (FATAL:  role "brpm" does not exist
+):
+  activerecord (3.2.11) lib/active_record/connection_adapters/postgresql_adapter.rb:1208:in `initialize'
+  activerecord (3.2.11) lib/active_record/connection_adapters/postgresql_adapter.rb:1208:in `new'
+  activerecord (3.2.11) lib/active_record/connection_adapters/postgresql_adapter.rb:1208:in `connect'
+  activerecord (3.2.11) lib/active_record/connection_adapters/postgresql_adapter.rb:326:in `initialize'
+  activerecord (3.2.11) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+  activerecord (3.2.11) lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:315:in `new_connection'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:325:in `checkout_new_connection'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:247:in `block (2 levels) in checkout'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /home/ranjeet/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/monitor.rb:201:in `mon_synchronize'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /home/ranjeet/.rvm/rubies/ruby-1.9.2-p320/lib/ruby/1.9.1/monitor.rb:201:in `mon_synchronize'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_specification.rb:171:in `retrieve_connection'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_specification.rb:145:in `connection'
+  activerecord (3.2.11) lib/active_record/query_cache.rb:67:in `rescue in call'
+  activerecord (3.2.11) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.11) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.11) lib/active_support/callbacks.rb:405:in `_run__961901371__call__585919550__callbacks'
+  activesupport (3.2.11) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.11) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.11) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.11) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  railties (3.2.11) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+Connecting to database specified by database.yml
+Started GET "/" for 127.0.0.1 at 2013-05-03 20:40:47 +0530
+Processing by ContactsController#index as HTML
+  Rendered contacts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 54ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+Started GET "/contacts/gmail" for 127.0.0.1 at 2013-05-03 20:40:53 +0530
+Connecting to database specified by database.yml
+Started GET "/" for 127.0.0.1 at 2013-05-03 20:44:06 +0530
+Processing by ContactsController#index as HTML
+  Rendered contacts/index.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 177ms (Views: 175.1ms | ActiveRecord: 0.0ms)
+Started GET "/contacts/gmail" for 127.0.0.1 at 2013-05-03 20:44:11 +0530
+Started GET "/contacts/gmail/callback?code=4/AN0ZRrRsavrRIzl6c8T_kdH7lkOI.conVmKt-x5wXgrKXntQAax0IFu7VfAI" for 127.0.0.1 at 2013-05-03 20:44:15 +0530
+Processing by ContactsController#callback as HTML
+  Parameters: {"code"=>"4/AN0ZRrRsavrRIzl6c8T_kdH7lkOI.conVmKt-x5wXgrKXntQAax0IFu7VfAI", "importer"=>"gmail"}
+  Rendered contacts/callback.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+Started GET "/static/images/magnifier_gray.png" for 127.0.0.1 at 2013-05-03 20:44:28 +0530
+
+ActionController::RoutingError (No route matches [GET] "/static/images/magnifier_gray.png"):
+  actionpack (3.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.11) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.11) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.11) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.11) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.11) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.11) lib/rails/engine.rb:479:in `call'
+  railties (3.2.11) lib/rails/application.rb:223:in `call'
+  railties (3.2.11) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.19) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:516:in `accept_and_process_next_request'
+  passenger (3.0.19) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/utils.rb:470:in `safe_fork'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.19) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.19) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.19) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+

@@ -1,0 +1,11 @@
+<%= button_tag(:type => 'button',  :onclick => "render_email_clients()", :id => "render_email_clients", :action => render_email_clients_contacts_path) do %>
+  <% content_tag(:strong, 'Invite Your Email Contacts')%>
+<%end%>
+<div id='email_contacts' style="display:none">
+	<%=link_to image_tag("/assets/gmail.jpg"),"/contacts/gmail",:onclick=>"window.open(this.href,'gmail_client','height=600, width=850');return false;" %>
+	<%=link_to image_tag("/assets/yahoo.jpg"),"/contacts/yahoo", :onclick=>"window.open(this.href,'yahoo_client', 'height=600, width=850');return false;"%>
+</div>
+
+<div id="loader" style="display:none">
+<%= image_tag "loading.gif", :class=>"ajax-loader"%>
+</div>

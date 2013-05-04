@@ -1,0 +1,23 @@
+<form id="filter-form">
+Filter:
+<input id="filter" type="text" width="92%" value="" name="filter" class="textinput suggestion-input">
+</form>
+<table cellpadding="0" cellspacing="0" border="0" class="display gridtable" id="emails" width="100%" >
+	<thead>
+		<tr>
+			<th></th>
+			<th>Name</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @contacts.each do |contact| %>
+			<tr class="odd gradeX">
+				<td><input id="#{contact[:email]}" type="checkbox" style="" value="#{contact[:email]}"></td>
+				<td><%= contact[:name]%></td>
+				<td><%= contact[:email]%></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
+<%= button_tag "Invite friends", :onclick => "invite_friends(); return false", :id => "select-contacts-submit-button", :class => "button"%>	

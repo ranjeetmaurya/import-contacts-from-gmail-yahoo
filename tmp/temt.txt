@@ -1,0 +1,4 @@
+<%= button_tag(:type => 'button',  :onclick => "render_email_clients()", :id => "render_email_clients", :action => render_email_clients_contacts_path) do %>
+  <% content_tag(:strong, 'Invite Your Email Contactsbu')%>
+<%end%>
+<div id='email_contacts'></div>

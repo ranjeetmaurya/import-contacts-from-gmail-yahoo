@@ -1,0 +1,80 @@
+<div class="loader">
+    <div class="ajax-loader"></div>
+</div>
+<div style="display:none">
+  <div id="social_data" style="overflow-y: scroll;overflow-x: hidden;height:525px;width:800px">
+    <div class="loader" style="display:none;">
+      <div class="ajax-loader"></div>
+    </div>
+    <div class="sending" style="display:none;">
+      <div class="sending-loader"></div>
+    </div>
+    <div id="msg" style="display:none;border: 1px solid;margin: 10px 0px;padding:15px 10px 15px 50px;background-repeat: no-repeat;background-position: 10px center;color: #4F8A10;background-color: #DFF2BF;"></div>
+    <%= javascript_tag do %>
+
+    $(function() {
+
+    var theTable = $('table#emails');
+
+    theTable.find("tbody > tr").find("td:eq(1)").mousedown(function(){
+      $(this).prev().find(":checkbox").click()
+    });
+
+    $("#filter").keyup(function() {
+      $(".loader").show();
+      $.uiTableFilter( theTable, this.value);
+      var theTableRowCount = $('table#emails tr:visible').size();
+      if(theTableRowCount > 1){
+        $(".loader").fadeOut(500)
+      }else{
+        $(".loader").hide();
+      }
+    })
+
+    $('#filter-form').submit(function(){
+      theTable.find("tbody > tr:visible > td:eq(1)").mousedown();
+      return false;
+    }).focus(); //Give focus to input field
+
+    $("#contactForm").submit(function(){
+      $(".sending").show();
+    })
+  });  
+
+  <%end%>
+  	<form id="filter-form">
+  	Filter:
+  	<input id="filter" type="text" width="92%" value="" name="filter" class="textinput suggestion-input">
+  	</form>
+    <%=form_tag "/contacts/invite_friends",{:remote=>true,:id=>"contactForm"} do%>
+  	<table cellpadding="0" cellspacing="0" border="0" class="display gridtable" id="emails" width="100%" >
+  		<thead>
+  			<tr>
+  				<th></th>
+  				<th>Name</th>
+  				<th>Email</th>
+  			</tr>
+  		</thead>
+  		<tbody>
+  			<% @contacts.each do |contact| %>
+  				<tr class="odd gradeX">
+  					<td><%= check_box_tag 'email_checkbox[]', "#{contact[:email]}"%></td>
+  					<td><%= contact[:name]%></td>
+  					<td><%= contact[:email]%></td>
+  				</tr>
+  			<%end%>
+  		</tbody>
+  	</table>
+  	<%= submit_tag "Invite friends", :id => "select-contacts-submit-button", :class => "button"%>
+    <%end%>
+  </div>
+  <%= javascript_tag do %>
+      var parent_window = window.opener;
+      parent_window.jQuery('#facebox').css('left', '200px');
+      setTimeout(function(){
+        parent_window.jQuery('#facebox .content').html($("#social_data").clone());
+        self.close();
+      },2000)
+      
+  <%end%>
+</div>
